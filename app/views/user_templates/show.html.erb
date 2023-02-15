@@ -7,7 +7,20 @@
 
   <dt>Edit user</dt>
 
-  <dd>form goes here</dd>
+  <dd>
+  <form action="/update_user/<%= @the_user.id %>">
+      <label for="browser_image">Image</label>
+      <input id="browser_image" type="text" name="query_image" placeholder="Enter a URL for the image..." value="<%= @the_photo.image %>">
+
+      <label for="browser_caption">Caption</label>
+      <textarea id="browser_caption" name="query_caption" placeholder="Enter a caption for the photo..."><%= @the_photo.caption %></textarea>
+
+      <button>Update user</button>
+  </form>
+
+</form>
+  
+  </dd>
 
 </dl>
 
