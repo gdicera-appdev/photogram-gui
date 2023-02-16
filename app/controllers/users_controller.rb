@@ -19,30 +19,30 @@ class UsersController < ApplicationController
   end
 
   def create
-    input_username = params.fetch("path_username")
-    a_new_user = User.new
-    a_new_user.owner_id = input_username
-    a_new_user.save
+    input_username = params.fetch("query_username")
+    a_new_username = User.new
+    a_new_username.username = input_username
+    a_new_username.save
     #render({ :template => "user_templates/create.html.erb"})
-    redirect_to("/users/" + a_new_username.id.to_s)
+    redirect_to("/users/" + a_new_username.username.to_s)
   end
 
   def update
-    the_id = params.fetch("modify_id")
+    the_id = params.fetch("modify_user")
 
-    matching_user = User.where({ :id => the_id })
+    matching_names = User.where({ :id => the_id })
 
-    the_new_user = matching_users.at(0)
+    the_user = matching_names.at(0)
 
-    input_new_user = params.fetch("query_user")
+    input_username = params.fetch("query_username")
 
-    the_new_user.username = input_new_user
+    the_user.username = input_username
 
-    the_new_user.save
+    the_user.save
     
     #render({ :template => "photo_templates/update.html.erb"})
 
-    redirect_to("/photos/" + the_photo.id.to_s)
+    redirect_to("/users/" + the_user.username.to_s)
   end
 
 end

@@ -69,3 +69,18 @@
 </table>
 
 <h3>Add a new comment</h3>
+
+<dd>
+  <form action="/insert_comment">
+    <label for="id_box">Photo ID</label>
+    <input id="id_box" type="text" name="query_photo_id" placeholder="Enter a URL for the image..." value="<%= @the_photo.id %>">
+
+    <label for="author_box">Author ID</label>
+    <textarea id="author_box" name="query_author_id"></textarea>
+
+    <label for="Comment">Comment</label>
+    <input id="Comment" name="query_comment">
+
+    <button>Add comment</button>
+  </form>
+</dd>
